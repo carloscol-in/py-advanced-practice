@@ -21,7 +21,7 @@ class FibonacciIterator:
         return self
 
     def __next__(self):
-        if (self._curr >= self._max):
+        if (self._max != None and self._curr >= self._max):
             raise StopIteration
 
         if (self._prev != None):
@@ -35,6 +35,14 @@ class FibonacciIterator:
         return self._curr
 
 
-fi = FibonacciIterator(34)
-for i in fi:
+fi = FibonacciIterator()
+should_continue = True
+for idx, i in enumerate(fi):
     print(i)
+
+    if (idx > 0 and idx % 10 == 0):
+        should_continue = input('\nDo you want to continue executing? (Y/N) - ').lower().strip() == 'y'
+        print('')
+
+    if (not should_continue):
+        break
