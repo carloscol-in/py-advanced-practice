@@ -2,12 +2,16 @@
 Sets practice & theory
 
     - Set's elements are immutable.
-    - Sets are sorted by default.    
+    - Set's elements are unique'.    
 """
 
 
 # see how it deletes duplicates
-my_set = {1,2,3,3,5}
+my_set = {9,2,3,3,5}
+print(my_set)
+
+# add an element into the set
+my_set.add(8)
 print(my_set)
 
 # you can only pop first element from a set
