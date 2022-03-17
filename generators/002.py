@@ -12,6 +12,9 @@ def fibonacci_generator(max_value: int = None):
 
         yield c
 
+        if (c >= max_value):
+            return
+
         c, n = c + n, c
 
 
@@ -20,7 +23,7 @@ if __name__ == '__main__':
     # looping through the iterator
     should_continue = True
 
-    fi = fibonacci_generator()
+    fi = fibonacci_generator(21)
 
     for idx, i in enumerate(fi):
         print(i)
